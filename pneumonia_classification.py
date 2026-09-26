@@ -95,7 +95,8 @@ test_ds = tf.keras.utils.image_dataset_from_directory(
     shuffle=False
 )
 
-print("\nClasses:", train_ds.class_names)
+class_names = train_ds.class_names
+print("\nClasses:", class_names)
 
 
 # ------------------------------------------------------------
@@ -232,6 +233,9 @@ history = model.fit(
     epochs=EPOCHS
 )
 
+model.save("pneumonia_cnn_model.keras")
+print("\n[INFO] Model saved as: pneumonia_cnn_model.keras")
+
 
 # ------------------------------------------------------------
 # 11. TEST EVALUATION
@@ -316,7 +320,7 @@ print(
     classification_report(
         y_true,
         y_pred,
-        target_names=train_ds.class_names
+        target_names=class_names
     )
 )
 
@@ -340,12 +344,12 @@ plt.ylabel("Actual Label")
 
 plt.xticks(
     [0, 1],
-    train_ds.class_names
+    class_names
 )
 
 plt.yticks(
     [0, 1],
-    train_ds.class_names
+    class_names
 )
 
 for i in range(2):
