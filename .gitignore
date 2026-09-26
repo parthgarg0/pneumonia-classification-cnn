@@ -1,0 +1,32 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Kaggle dataset cache & local downloads
+.cache/
+datasets/
+*.zip
+
+# Checkpoints and models (uncomment if you wish to exclude trained model binaries)
+# *.keras
+# *.h5
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
