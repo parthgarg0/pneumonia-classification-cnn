@@ -123,14 +123,40 @@ python pneumonia_classification.py
 
 ---
 
-## 📊 Evaluation & Metrics
+## 📊 Experimental Results & Evaluation
 
-The script outputs comprehensive evaluation statistics:
-- **Test Loss & Accuracy**
-- **Precision, Recall, & F1 Score**
-- **Scikit-Learn Classification Report**
-- **Confusion Matrix Plot**: Saved as `confusion_matrix.png`
-- **Training Progression Plot**: Saved as `training_graphs.png`
+The model was evaluated on the independent test dataset of **624 chest X-ray images** (234 Normal, 390 Pneumonia).
+
+### Performance Metrics Summary
+
+| Metric | Score | Note |
+|---|---|---|
+| **Test Accuracy** | **81.41%** | Overall correct diagnoses on test set |
+| **Recall (Sensitivity)** | **98.46%** | Crucial clinical metric: near-zero missed pneumonia cases |
+| **Precision** | **77.73%** | Reliable positive predictions |
+| **F1-Score** | **86.88%** | Harmonic mean of precision and recall |
+| **Test Loss** | **0.5005** | Binary crossentropy loss |
+
+### Detailed Classification Report
+
+```text
+              precision    recall  f1-score   support
+
+      NORMAL       0.95      0.53      0.68       234
+   PNEUMONIA       0.78      0.98      0.87       390
+
+    accuracy                           0.81       624
+   macro avg       0.87      0.76      0.78       624
+weighted avg       0.84      0.81      0.80       624
+```
+
+### Visualizations
+
+#### Training Progression (Accuracy & Loss)
+![Training & Validation Curves](training_graphs.png)
+
+#### Confusion Matrix
+![Confusion Matrix](confusion_matrix.png)
 
 ---
 
